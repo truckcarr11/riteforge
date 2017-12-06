@@ -20,10 +20,14 @@
         <div class="ml-auto">
             <form class="form-inline">
                 <input id="input" class="form-control mr-sm-2 statsPageInput" type="text" placeholder="Search">
-                <button class="btn btn-primary" type="button" onclick="getParticipantsStatsByMatchID();">Get Match Stats</button>
+                <button class="btn btn-primary" type="button" onclick="getMatchDataById();">Get Match Stats</button>
             </form>
         </div>
     </nav>
+
+    <div>
+      <a id="mapName" style="color: white"></a>
+    </div>
 
     <div class="center-div">
     <div class="container">
@@ -46,8 +50,10 @@
     </div>
   </div>
 
+    <script src="config.js"></script>
     <script src="api.js"></script>
     <script src="stats.js"></script>
+    <script src="data.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 </body>
 
