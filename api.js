@@ -1,8 +1,4 @@
-apiKey = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJjNzhiYjljMC1iNjQzLTAx' +
-    'MzUtZGI4OS0wYTU4NjQ2MGE5MTAiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTExO' +
-    'DU3NTk5LCJwdWIiOiJzdHVubG9jay1zdHVkaW9zIiwidGl0bGUiOiJiYXR0bGVyaXRlIi' +
-    'wiYXBwIjoicml0ZWZvcmdlIiwic2NvcGUiOiJjb21tdW5pdHkiLCJsaW1pdCI6MTB9.nf' +
-    'MLzNdM8CZH9KOvb12o-dZ9PCR6WMVnrgtxhPbInuU';
+apiKey = config.API_KEY;
 
 function getPlayers() {
     $.ajax({
@@ -80,7 +76,7 @@ function getListOfMatchIds() {
     });
 }
 
-function getParticipantsStatsByMatchID() {
+function getMatchDataById() {
     let input = document.getElementById('input');
     let matchId = input.value;
     let participants = new Array();
@@ -95,13 +91,14 @@ function getParticipantsStatsByMatchID() {
         success: function(json, status) {
             let counter = 0;
             let inavlidMatch = false;
+            sessionStorage.mapName = getMapNameByID(json.data.attributes.stats.mapID);
             for (let i = 0; i < json.included.length; i++) {
                 if (json.included[i].type == 'participant'){
                   if(json.included[i].attributes.stats.abilityUses==undefined){
                     invalidMatch = true;
                     break;
                   } else {
-                  participants[counter] = json.included[i].attributes.stats;
+                  participants[counter] = json.included[i].attributes;
                   counter++;
                 }
                 }
