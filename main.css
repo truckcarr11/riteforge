@@ -1,0 +1,46 @@
+#input
+{
+     width: 25%;
+     display: inline;
+     margin: 10px;
+}
+.statsPageInput
+{
+  width: 300px;
+  display: inline;
+  margin: 10px;
+
+}
+.center-div
+{
+     position: absolute;
+     margin: auto;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     height: 100px;
+     text-align: center;
+}
+.body{
+  background-color: #2C2F33;
+}
+h3{
+  margin: 0px;
+}
+.navbar{
+  background-color: #23272A;
+}
+.btn{
+  background-color: #7289DA;
+  border-color: #7289DA;
+}
+.btn:hover{
+  background-color: #5668a6;
+  border-color: #5668a6;
+}
+.form-inline{
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
